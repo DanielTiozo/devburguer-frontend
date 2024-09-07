@@ -27,5 +27,3 @@ export const Container = styled.section`
     height: 700px;
 `;
 
-export const Content = styled.div`
-`;

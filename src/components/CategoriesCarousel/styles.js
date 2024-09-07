@@ -5,13 +5,25 @@ export const Container = styled.div`
         padding-right: 40px;
     }
 
+    .react-multiple-carousel__arrow--left{
+        left: 10px;
+        bottom: 10px;
+        background-color: #2030a6;
+    }
+
+    .react-multiple-carousel__arrow--right{
+        right: 50px;
+        bottom: 10px;
+        background-color: #2030a6;
+    }
+
     padding-left: 40px;
 `;
 
 export const Title = styled.h2`
     font-size: 32px;
     font-weight: 600;
-    color: #9758a6;
+    color: #A41E11;
     padding-bottom: 12px;
     position: relative;
     text-align: center;
@@ -24,7 +36,7 @@ export const Title = styled.h2`
         bottom: 0;
         width: 80px;
         height: 3px;
-        background-color: #9758a6;
+        background-color: #D62828;
         left: calc(50% - 40px);
     }
 `;
@@ -42,7 +54,7 @@ export const ContainerItems = styled.div`
     height: 260px;
 
     p{
-        color: #fff;
+        color: #EBDCB2;
         background-color: rgba(0,0,0, 0.5);
         padding: 10px 30px;
         border-radius: 30px;
