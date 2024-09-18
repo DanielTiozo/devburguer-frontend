@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
+
 import { CardImage, Container } from './styles';
 import { CartButton } from '../CartButton';
+
 export function CardProduct({ product }) {
 	return (
 		<Container>
