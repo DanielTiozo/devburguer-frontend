@@ -47,6 +47,11 @@ export const RightContainer = styled.div`
 
     a{
         text-decoration: underline;
+        color: #cf3057;
+
+        &:active{
+          color: #86B049;
+        }
     }
   }
 `;
@@ -57,7 +62,7 @@ export const Title = styled.h2`
   color: #fff;
 
   span{
-    color: #9758a6;
+    color: #cf3057;
     font-family: "Road Rage", sans-serif;
   }
 `;
