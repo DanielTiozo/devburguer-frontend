@@ -5,15 +5,72 @@ const CartContext = createContext({});
 export const CartProvider = ({ children }) => {
 	const [cartProducts, setCartProducts] = useState([]);
 
-	const putProductInCart = (product) => {};
+	const putProductInCart = (product) => {
+		const cartIndex = cartProducts.findIndex((prd) => prd.id === product.id);
 
-	const clearCart = () => {};
+		let newProductsInCart = [];
+		if (cartIndex >= 0) {
+			newProductsInCart = cartProducts;
 
-	const deleteProduct = (productId) => {};
+			newProductsInCart[cartIndex].quantity = newProductsInCart[cartIndex].quantity + 1;
 
-	const increaseProduct = (productId) => {};
+			setCartProducts(newProductsInCart);
+		} else {
+			product.quantity = 1;
 
-	const decreaseProduct = (productId) => {};
+			newProductsInCart = [...cartProducts, product];
+			setCartProducts(newProductsInCart);
+		}
+		updateLocalStorage(newProductsInCart);
+	};
+
+	const clearCart = () => {
+		setCartProducts([]);
+
+		updateLocalStorage([]);
+	};
+
+	const deleteProduct = (productId) => {
+		const newCart = cartProducts.filter((prd) => prd.id !== productId);
+
+		setCartProducts(newCart);
+		updateLocalStorage(newCart);
+	};
+
+	const increaseProduct = (productId) => {
+		const newCart = cartProducts.map((prd) => {
+			return prd.id === productId ? { ...prd, quantity: prd.quantity + 1 } : prd;
+		});
+
+		setCartProducts(newCart);
+		updateLocalStorage(newCart);
+	};
+
+	const decreaseProduct = (productId) => {
+		const cartIndex = cartProducts.findIndex((prod) => prod.id === productId);
+
+		if (cartProducts[cartIndex].quantity > 1) {
+			const newCart = cartProducts.map((prd) => {
+				return prd.id === productId ? { ...prd, quantity: prd.quantity - 1 } : prd;
+			});
+			setCartProducts(newCart);
+			updateLocalStorage(newCart);
+		} else {
+			deleteProduct(productId);
+		}
+	};
+
+	const updateLocalStorage = (products) => {
+		localStorage.setItem('devburguer:cartInfo', JSON.stringify(products));
+	};
+
+	useEffect(() => {
+		const clientCartData = localStorage.getItem('devburguer:cartInfo');
+
+		if (clientCartData) {
+			setCartProducts(JSON.parse(clientCartData));
+		}
+	}, [cartProducts]);
 
 	return (
 		<CartContext.Provider
