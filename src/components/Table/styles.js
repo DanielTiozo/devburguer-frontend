@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Root = styled.table`
     width: 100%;
     border-collapse: collapse;
-    background-color: #484848;
+    background-color: #fff;
     border-radius: 20px;
 `;
 
@@ -19,12 +19,23 @@ export const Th = styled.th`
     padding: 16px;
     text-align: left;
     color: #fff;
+    background-color: #484848;
     border-bottom: 1px solid #cdcdcd;
+
+    
+    &:first-child{
+        border-top-left-radius: 20px;
+
+    }
+    &:last-child{
+        border-top-right-radius: 20px;
+    }
 `;
 
 export const Td = styled.td`
     padding: 16px;
-    color: #fff;
+    color: #484848;
+    background-color: #fff;
 
     font-weight: 500;
     line-height: 115%;

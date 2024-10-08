@@ -50,7 +50,7 @@ export const Title = styled.div`
 
 export const Content = styled.div`
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 1fr 30%;
     width: 100%;
     max-width: 1280px;
     padding: 40px;
