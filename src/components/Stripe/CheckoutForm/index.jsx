@@ -54,9 +54,7 @@ export default function CheckoutForm() {
 				if (status === 200 || status === 201) {
 					setTimeout(() => {
 						navigate(`/completo?payment_intent_client_secret=${paymentIntent.client_secret}`);
-						clearCart();
-					}, 3000);
-
+					}, 3000)
 					clearCart();
 					toast.success('Pedido realizado com sucesso!');
 				} else if (status === 400) {
@@ -64,8 +62,6 @@ export default function CheckoutForm() {
 				} else {
 					throw new Error();
 				}
-
-				console.log(status);
 				// eslint-disable-next-line no-unused-vars
 			} catch (error) {
 				toast.error('Falha no Sistema! Tente novamente');
