@@ -12,7 +12,7 @@ export const Banner = styled.div`
     h1{
         font-family: "Road Rage", sans-serif;
         font-size: 80px;
-        color: #f4f4f4;
+        color: ${(props) => props.theme.thirdWhite};
         position: absolute;
         right: 20%;
         top: 20%;
@@ -26,4 +26,3 @@ export const Container = styled.section`
      url('${Background}');
     height: 700px;
 `;
-

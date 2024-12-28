@@ -17,14 +17,14 @@ export const ButtonGroup = styled.div`
         justify-content: center;
         height: 30px;
         width: 30px;
-        color: #fff;
+        color: ${(props) => props.theme.white};
         border-radius: 3px;
-        background-color: #4B2E14;
+        background-color: ${(props) => props.theme.brown};
         transition: all .5s;
         border: none;
 
         &:hover{
-            background-color: #5C4033;
+            background-color: ${(props) => props.theme.lightbrown};
         }
     }
 `;

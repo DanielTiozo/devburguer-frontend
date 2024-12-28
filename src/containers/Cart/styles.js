@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const Banner = styled.div`
     background: url('${BackgroundHeader}');
-    background-color: #5C4033;
+    background-color: ${(props) => props.theme.lightbrown};
     background-size: cover;
     background-position: center;
     display: flex;
@@ -33,7 +33,7 @@ export const Title = styled.div`
     font-size: 32px;
     font-weight: 700;
     padding-bottom: 10px;
-    color: #F9A825;
+    color: ${(props) => props.theme.orange};
     text-align: center;
     position: relative;
 
@@ -42,7 +42,7 @@ export const Title = styled.div`
         position: absolute;
         width: 60px;
         height: 5px;
-        background-color: #F9A825;
+        background-color: ${(props) => props.theme.orange};
         bottom: 0;
         left: calc(50% - 30px);
     }

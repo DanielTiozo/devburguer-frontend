@@ -7,7 +7,7 @@ export const Container = styled.div`
     gap: 40px;
     padding: 20px;
     border-radius: 20px;
-    background-color: #F5E5C0;
+    background-color: ${(props) => props.theme.secondWhite};
     cursor: grab;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     margin-bottom: 20px;
@@ -24,7 +24,7 @@ export const Container = styled.div`
     
     p{
         font-size: 18px;
-        color: #F9A825;
+        color: ${(props) => props.theme.orange};
         line-height: 20px;
         font-weight: 500;
         margin-top: 40px;
@@ -32,7 +32,7 @@ export const Container = styled.div`
 
     strong{
         font-size: 22px;
-        color: #86B049;
+        color: ${(props) => props.theme.green};
         font-weight: 500;
         line-height: 20px;
     }

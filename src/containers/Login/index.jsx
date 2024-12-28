@@ -42,7 +42,7 @@ export function Login() {
 				success: {
 					render() {
 						setTimeout(() => {
-							navigate('/');
+							userData?.admin ? navigate('/admin/pedidos') : navigate('/');
 						}, 2000);
 						return `Seja Bem-vindo(a) 👌`;
 					},

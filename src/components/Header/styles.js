@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-    background-color: #1f1f1f;
+    background-color: ${(props) => props.theme.mainBlack};
     width: 100%;
     height: 72px;
     padding: 0 50px;
@@ -32,20 +32,20 @@ export const Navigation = styled.nav`
 
         hr{
             height: 24px;
-            border: 1px solid #236451;
+            border: 1px solid ${(props) => props.theme.lightGreen};
         }
     }
 `;
 
 export const HeaderLink = styled(Link)`
-    color: ${(props) => (props.$isActive ? '#86B049' : '#fff')};
-    border-bottom: ${(props) => props.$isActive && '1px solid #86B049'};
+    color: ${(props) => (props.$isActive ? (props) => props.theme.green : (props) => props.theme.white)};
+    border-bottom: ${(props) => props.$isActive && `1px solid ${(props) => props.theme.green}`};
     text-decoration: none;
     font-size: 14px;
     transition: color .2s;
     
     &:hover{
-        color: #86B049;
+        color: ${(props) => props.theme.green};
     }
 `;
 
@@ -63,19 +63,19 @@ export const Profile = styled.div`
     font-size: 14px;
 
     p{
-        color: #fff;
+        color: ${(props) => props.theme.white};
         line-height: 90%;
         font-weight: 300;
 
         span{
             font-weight: 700;
-            color: #86B049;
+            color: ${(props) => props.theme.green};
         }
     }
 `;
 
 export const Logout = styled.button`
-    color: #F9A825;
+    color: ${(props) => props.theme.orange};
     text-decoration: none;
     font-weight: 700;
     background-color: transparent;

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export const Container = styled.div`
     width: 100%;
     min-height: 100%;
-    background-color: #f0f0f0;
+    background-color: ${(props) => props.theme.fiveWhite};
 
     background: linear-gradient(
         rgba(255,255,255, 0.5),
@@ -23,7 +23,7 @@ export const Banner = styled.div`
     width: 100%;
 
     background: url('${BannerHamburguer}');
-    background-color: #1f1f1f;
+    background-color: ${(props) => props.theme.mainBlack};
     background-position: center;
     background-size: cover;
 
@@ -31,7 +31,7 @@ export const Banner = styled.div`
         font-family: 'Road Rage', sans-serif;
         font-size: 80px;
         line-height: 65px;
-        color: #fff;
+        color: ${(props) => props.theme.white};
         position: absolute;
 
         right: 20%;
@@ -39,7 +39,7 @@ export const Banner = styled.div`
 
         span{
             display: block;
-            color: #fff;
+            color: ${(props) => props.theme.white};
             font-size: 20px;
         }
     }
@@ -56,13 +56,13 @@ export const CategoryButton = styled(Link)`
     text-decoration: none;
     cursor: pointer;
     background: none;
-    color: ${(props) => (props.$isActiveCategory ? '#1e1e1e' : '#F9A825')};
+    color: ${(props) => (props.$isActiveCategory ? (props) => props.theme.darkBrown : (props) => props.theme.orange)};
     font-size: 24px;
     font-weight: 500;
     padding-bottom: 5px;
     line-height: 20px;
     border: none;
-    border-bottom: ${(props) => props.$isActiveCategory && '4px solid #1e1e1e'} ;
+    border-bottom: ${(props) => props.$isActiveCategory && `4px solid ${(props) => props.theme.darkBrown}`} ;
 `;
 
 export const ProductsContainer = styled.div`

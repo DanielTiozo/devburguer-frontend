@@ -13,13 +13,13 @@ export const Container = styled.div`
     .react-multiple-carousel__arrow--left{
         left: 10px;
         bottom: 30px;
-        background-color: #2030a6;
+        background-color: ${(props) => props.theme.blue};
     }
 
     .react-multiple-carousel__arrow--right{
         right: 50px;
         bottom: 30px;
-        background-color: #2030a6;
+        background-color: ${(props) => props.theme.blue};
     }
 
     padding-left: 40px;
@@ -28,7 +28,7 @@ export const Container = styled.div`
 export const Title = styled.h2`
     font-size: 32px;
     font-weight: 600;
-    color: #4B2E14;
+    color: ${(props) => props.theme.brown};
     padding-bottom: 12px;
     position: relative;
     text-align: center;
@@ -41,7 +41,7 @@ export const Title = styled.h2`
         bottom: 0;
         width: 80px;
         height: 3px;
-        background-color: #5C4033;
+        background-color: ${(props) => props.theme.lightbrown};
         left: calc(50% - 40px);
     }
 `;

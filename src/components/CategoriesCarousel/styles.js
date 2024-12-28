@@ -9,13 +9,13 @@ export const Container = styled.div`
     .react-multiple-carousel__arrow--left{
         left: 10px;
         bottom: 10px;
-        background-color: #2030a6;
+        background-color: ${(props) => props.theme.blue};
     }
 
     .react-multiple-carousel__arrow--right{
         right: 50px;
         bottom: 10px;
-        background-color: #2030a6;
+        background-color: ${(props) => props.theme.blue};
     }
 
     padding-left: 40px;
@@ -24,7 +24,7 @@ export const Container = styled.div`
 export const Title = styled.h2`
     font-size: 32px;
     font-weight: 600;
-    color: #A41E11;
+    color: ${(props) => props.theme.secondRed};
     padding-bottom: 12px;
     position: relative;
     text-align: center;
@@ -37,7 +37,7 @@ export const Title = styled.h2`
         bottom: 0;
         width: 80px;
         height: 3px;
-        background-color: #D62828;
+        background-color: ${(props) => props.theme.lightred};
         left: calc(50% - 40px);
     }
 `;
@@ -56,7 +56,7 @@ export const ContainerItems = styled.div`
 `;
 
 export const CategoryButton = styled(Link)`
-    color: #EBDCB2;
+    color: ${(props) => props.theme.fourtWhite};
     background-color: rgba(0,0,0, 0.5);
     padding: 10px 30px;
     border-radius: 30px;
@@ -66,6 +66,6 @@ export const CategoryButton = styled(Link)`
     text-decoration: none;
 
     &:hover{
-        background-color: #D62828;
+        background-color: ${(props) => props.theme.lightred};
     }
 `;
